@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="context1">
+
+		<!-- 
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@44.5.10.69:1521:orcl" userId="zhxt" password="zhxt">
+			<property name="remarksReporting" value="true" />
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="com.tydic.zhxt.entity" targetProject="D:\MyProject" />
+
+		<sqlMapGenerator targetPackage="mapper" targetProject="D:\MyProject" />
+
+		<javaClientGenerator targetPackage="com.tydic.zhxt.dao" targetProject="D:\MyProject" type="XMLMAPPER" />
+
+		<table tableName="%" schema="zhxt">
+			<generatedKey column="id" sqlStatement="oracle" identity="true" />
+		</table>
+		 -->
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://192.168.0.109:3306/main_smmsdemo?useUnicode=true&amp;characterEncoding=utf8"
+                    userId="root" password="root">
+	    </jdbcConnection>
+	
+	    <javaModelGenerator targetPackage="com.sizatn.springbootmybatis.entity" targetProject="springboot-mybatis"/>
+
+	    <sqlMapGenerator targetPackage="mapper" targetProject="springboot-mybatis"/>
+
+	    <javaClientGenerator targetPackage="com.sizatn.springbootmybatis.dao" targetProject="springboot-mybatis" type="XMLMAPPER" />
+	
+	    <table tableName="%" schema="root">
+	      <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+	    </table>
+	</context>
+</generatorConfiguration>
