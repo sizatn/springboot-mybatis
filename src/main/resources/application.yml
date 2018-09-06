@@ -34,7 +34,7 @@ spring:
         enabled: true
       
 mybatis: 
-  mapperLocations: classpath:mapper/*.xml
+  mapperLocations: classpath*:mapper/*.xml
   typeAliasesPackage: com.sizatn.springbootmybatis.entity
   configuration: 
     callSettersOnNulls: true
