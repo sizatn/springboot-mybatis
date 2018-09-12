@@ -39,10 +39,10 @@ public class UserController {
 	@ApiImplicitParam(name = "user", value = "用户对象", required = true, dataType = "User")
 	@PostMapping(value = "")
 	public String postUser(@RequestBody User user) {
-		if (userService.saveUser(user) != 1) {
-			return "fail";
+		if (userService.saveUser(user) == 1) {
+			return "success";
 		}
-		return "success";
+		return "fail";
 	}
 
 	@ApiOperation(value = "获取用户详细信息", notes = "根据url的userNo来获取用户详细信息")
@@ -56,20 +56,20 @@ public class UserController {
 	@ApiImplicitParam(name = "user", value = "用户对象", required = true, dataType = "User")
 	@PutMapping(value = "")
 	public String putUser(@RequestBody User user) {
-		if (userService.updateUser(user) != 1) {
-			return "fail";
+		if (userService.updateUser(user) == 1) {
+			return "success";
 		}
-		return "success";
+		return "fail";
 	}
 
 	@ApiOperation(value = "删除用户", notes = "根据url的userNo来指定删除对象")
 	@ApiImplicitParam(name = "userNo", value = "用户编号", required = true, dataType = "String")
 	@DeleteMapping(value = "/{userNo}")
 	public String deleteUser(@PathVariable String userNo) {
-		if (userService.deleteUser(userNo) != 1) {
-			return "fail";
+		if (userService.deleteUser(userNo) == 1) {
+			return "success";
 		}
-		return "success";
+		return "fail";
 	}
 
 }
